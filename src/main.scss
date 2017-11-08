@@ -1,0 +1,146 @@
+@import './sass/reset';
+
+// ======= Variables ======= //
+@import './sass/variables';
+
+// ======= Mixins ======= //
+@import './sass/mixins';
+
+// ======= Components ======= //
+@import './Components/Login/Login';
+@import './Components/TypeAnimate/TypeAnimate';
+@import './Components/Home/Home';
+@import './Components/Header/Header';
+@import './Components/Trips/Trips';
+
+#App {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    
+    header {
+        // border: 1px solid blue;
+        text: {
+            align: center;
+            transform: uppercase;
+        }
+        letter-spacing: 0.1em;        
+        width: 100vw;
+        padding-top: 20px;
+        height: 90px;
+        font: {
+            family: $sans;
+            size: 3rem;
+        }
+        background-color: $white-opaque;
+    }
+    /*Gif by David Kanigan*/    
+    background-image: url('https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600');
+    // background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');    
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 500px) {
+    /*Photo by Benjamin Voros on Unsplash*/
+    #App {
+        background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+    }
+}
+
+
+
+
+
+
+// @include landing-page-bg-image();
+// @include about-page-bg-image();
+// @include season-page-bg-image();
+// @include support-page-bg-image();
+
+// .overAll {
+//     position: fixed;
+//     background-color: black;
+//     opacity: 1;
+//     z-index: 5;
+
+//     overflow: hidden;
+
+//     img {
+//         width: 300px;
+//         height: 300px;
+//         position: absolute;
+//     }
+// }
+
+// #overAllTopLeft{
+//     width: 50vw;
+//     height: 50vh;
+
+//     top: 0vh;
+//     left: 0vw;
+
+//     img {
+//         bottom: -150px;
+//         right: -150px;
+//     }
+// }
+// #overAllTopRight {
+//     width: 50vw;
+//     height: 50vh;
+
+//     top: 0vh;
+//     left: 50vw;
+
+//     img {
+//         bottom: -150px;
+//         left: -150px;
+//     }
+// }
+// #overAllBottomLeft {
+//     width: 50vw;
+//     height: 50vh;
+
+//     top: 50vh;
+//     left: 0vw;
+
+//     img {
+//         top: -150px;
+//         right: -150px;
+//     }
+// }
+// #overAllBottomRight{
+//     width: 50vw;
+//     height: 50vh;
+
+//     top: 50vh;
+//     left: 50vw;
+
+//     img {
+//         top: -150px;
+//         left: -150px;
+//     }
+// }
+
+// .mobileHeader {
+//     width: calc(100vw + 10px);
+//     display: block;
+//     position: relative;
+//     left: 0px;
+// }
+
+// .fullscreenHeader {
+//     width: calc(100vw + 10px);
+//     display: none;
+//     position: relative;
+//     left: 0px;
+// }
+
+// @media (min-width: 650px) {
+//     .mobileHeader{
+//         display: none;
+//     }
+//     .fullscreenHeader{
+//         display: block;
+//     }
+// }

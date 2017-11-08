@@ -1,3 +1,25 @@
+Things to showcase:
+  -Underscore?
+  -Lodash?
+  -D3?
+
+Travel Planning Site:
+  -Auth 0
+
+  -To-Do List:
+    -Local Storage
+    -Packed/Not Packed
+    -S3 Picture uploads to add to list
+
+  -Chat with an Agent Page:
+    -Sockets
+  
+  -Restful API:
+    -flights
+    -underscore/lodash to sort them?
+  
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

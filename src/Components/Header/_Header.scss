@@ -1,0 +1,33 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#Header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    .mobileMakingWrapper{
+        @include mobile-making-wrapper();
+        height: 250px;
+        padding: 20px 0;
+        margin-top: 0;
+
+        h1 {
+            width: 300px;
+            color: $snowy-sky;  
+            color: $black;  
+            margin-bottom: 20px;          
+            font: {
+                family: $sans;
+                size: 2rem;
+            }
+            line-height: 1.2em;
+            text: {
+                align: center;
+                transform: uppercase;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,190 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#Login {
+  width: 100vw;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.35); }
+  #Login .mobileMakingWrapper {
+    width: 300px;
+    margin-top: 50px; }
+  #Login a {
+    display: block;
+    width: 300px;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 30px; }
+    #Login a .secondary {
+      font-size: 0.8rem;
+      margin-top: 10px; }
+
+.type-wrap {
+  width: 300px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 60px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem; }
+  .type-wrap span {
+    color: #fff; }
+
+#Home {
+  width: 100vw;
+  min-height: calc(100vh - 90px);
+  overflow: scroll;
+  background-color: rgba(255, 255, 255, 0.35); }
+  #Home .homeWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center; }
+    #Home .homeWrapper .mobileMakingWrapper {
+      width: 300px;
+      margin: 20px 0 50px 0; }
+    #Home .homeWrapper span {
+      cursor: pointer;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      color: #fff;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 7px 0;
+      background-color: rgba(0, 0, 0, 0.5); }
+      #Home .homeWrapper span:hover {
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.35); }
+    #Home .homeWrapper .choices {
+      width: 300px; }
+    #Home .homeWrapper .chat {
+      width: 300px;
+      position: absolute;
+      bottom: 0; }
+      #Home .homeWrapper .chat span {
+        width: 300px;
+        background-color: #000; }
+
+#Header {
+  width: 100vw;
+  display: flex;
+  justify-content: center; }
+  #Header .mobileMakingWrapper {
+    width: 300px;
+    height: 250px;
+    padding: 20px 0;
+    margin-top: 0; }
+    #Header .mobileMakingWrapper h1 {
+      width: 300px;
+      color: #949494;
+      color: #000;
+      margin-bottom: 20px;
+      font-family: "Open Sans", sans-serif;
+      font-size: 2rem;
+      line-height: 1.2em;
+      text-align: center;
+      text-transform: uppercase; }
+
+#Trips {
+  width: 300px;
+  height: 30vh;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #fff; }
+  #Trips li {
+    width: 300px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.2em;
+    margin: 10px 0; }
+  #Trips .completed {
+    text-decoration: line-through;
+    color: #949494; }
+
+#App {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  /*Gif by David Kanigan*/
+  background-image: url("https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600");
+  background-size: cover;
+  background-position: center; }
+  #App header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: 100vw;
+    padding-top: 20px;
+    height: 90px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.35); }
+
+@media (min-width: 500px) {
+  /*Photo by Benjamin Voros on Unsplash*/
+  #App {
+    background-image: url("https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"); } }

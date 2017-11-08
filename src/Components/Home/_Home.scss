@@ -1,0 +1,64 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#Home {
+    width: 100vw;
+    min-height: calc(100vh - 90px);
+    overflow: scroll;
+    // display: flex;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    background-color: $white-opaque;
+
+    .homeWrapper {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        
+        .mobileMakingWrapper {
+            @include mobile-making-wrapper;
+            margin: 20px 0 50px 0;
+            // border: 1px solid green;
+        }
+
+        span {
+            cursor: pointer;
+            font: {
+                family: $sans;
+                size: 1.2rem;
+            }
+            color: $white;
+            display: inline-block;
+            width: 100px;
+            text: {
+                align: center;
+                transform: uppercase;
+            }
+            padding: 7px 0;
+            background-color: $black-opaque;            
+            &:hover {
+                color: $black;
+                background-color: $white-opaque;
+            }
+        }
+
+        .choices {
+            width: 300px;
+            // border: 1px solid red;
+        }
+
+        .chat{
+            width: 300px;
+            position: absolute;
+            bottom: 0;
+            span {
+                width: 300px;
+                background-color: $black;
+            }
+        }
+    }
+    
+
+    
+
+}
