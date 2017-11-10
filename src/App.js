@@ -98,6 +98,7 @@ class App extends Component {
       }
 
       this.toggleTripStatus = this.toggleTripStatus.bind(this);
+      this.createTrip = this.createTrip.bind(this);
   }
 
   componentWillMount(){
@@ -114,6 +115,14 @@ class App extends Component {
     //axios call to update tripToUpdate in db
   }
 
+  createTrip(tripObject){
+    let x = this.state.trips.slice(0);
+    x.unshift(tripObject);
+    this.setState({
+        trips: x
+    })
+  }
+
   render() {
     return (
       <div id="App">
@@ -123,7 +132,7 @@ class App extends Component {
         {
           this.state.userOnSession ?
 
-            <Home trips={this.state.trips} toggleTripStatus={this.toggleTripStatus}/>
+            <Home trips={this.state.trips} toggleTripStatus={this.toggleTripStatus} createTrip={this.createTrip}/>
             :
             <Login/>
         }

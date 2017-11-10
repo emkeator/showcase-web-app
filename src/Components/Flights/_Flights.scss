@@ -1,0 +1,117 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#Flights {
+    width: 300px;
+    // height: 30vh;
+    overflow-y: scroll;
+    // background-color: $white-opaque;
+
+    color: $white;
+    border-top: 2px solid $black;
+
+    .searchWrapper {
+        height: 80px;
+        // border: 1px solid red;
+        display: flex;
+        div {
+            width: 150px;
+            // border: 1px solid red;
+        }
+
+        input,
+        button {
+            width: 150px;
+            height: 40px;
+            padding: 7px;
+            background-color: $black-opaque;
+            border: none;
+            outline: none;
+            color: $white;
+            font: {
+                family: $sans;
+                size: 1rem;
+            }
+        }
+
+        button {
+            color: $black;
+            background-color: $white-opaque;
+            &:hover{
+                background-color: $black-opaque;
+                color: $white;
+            }
+        }
+    }
+
+    #cityOne,
+    #cityTwo {
+        display: block;
+        max-width: 100px;
+        border: 1px solid green;
+        width: 300px;
+        height: 25px;
+        opacity: 0;
+        color: $black;
+        font: {
+            family: $sans;
+            size: 1.3rem;
+        }
+        position: absolute;        
+    }
+
+    #cityOne {
+        top: 0;
+    }
+    #cityTwo {
+        text-align: right;
+        bottom: 0;
+        // right: 0;
+    }
+
+    .animateContainer {
+        position: relative;
+        margin-top: 10px;
+        border: 1px solid red;
+        height: 180px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 7px;
+        overflow: hidden;
+        color: $white;
+        font: {
+            family: $sans;
+            size: 1rem;
+        }
+        text {
+            align: center;
+            decoration: none;
+            transform: uppercase;
+        }
+        background-color: $black-opaque;
+    }
+    #plane {
+        display: inline-block;
+        // position: absolute;
+        // top: 25px;
+        // left: 25px;
+        // opacity: 0;
+    }
+
+    .path{
+        height: 5px;
+        width: 5px;
+        // border-radius: 50%;
+        background-color: $black;
+        position: absolute;        
+    }
+
+    #path1{
+        top: 30px;
+        left: 30px;
+    }
+    
+
+}

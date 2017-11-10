@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -164,6 +165,78 @@ table {
   #Trips .completed {
     text-decoration: line-through;
     color: #949494; }
+
+#Flights {
+  width: 300px;
+  overflow-y: scroll;
+  color: #fff;
+  border-top: 2px solid #000; }
+  #Flights .searchWrapper {
+    height: 80px;
+    display: flex; }
+    #Flights .searchWrapper div {
+      width: 150px; }
+    #Flights .searchWrapper input,
+    #Flights .searchWrapper button {
+      width: 150px;
+      height: 40px;
+      padding: 7px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem; }
+    #Flights .searchWrapper button {
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.35); }
+      #Flights .searchWrapper button:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff; }
+  #Flights #cityOne,
+  #Flights #cityTwo {
+    display: block;
+    max-width: 100px;
+    border: 1px solid green;
+    width: 300px;
+    height: 25px;
+    opacity: 0;
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3rem;
+    position: absolute; }
+  #Flights #cityOne {
+    top: 0; }
+  #Flights #cityTwo {
+    text-align: right;
+    bottom: 0; }
+  #Flights .animateContainer {
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid red;
+    height: 180px; }
+  #Flights a {
+    display: inline-block;
+    padding: 7px;
+    overflow: hidden;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.5); }
+    #Flights a text {
+      align: center;
+      decoration: none;
+      transform: uppercase; }
+  #Flights #plane {
+    display: inline-block; }
+  #Flights .path {
+    height: 5px;
+    width: 5px;
+    background-color: #000;
+    position: absolute; }
+  #Flights #path1 {
+    top: 30px;
+    left: 30px; }
 
 #App {
   width: 100vw;
