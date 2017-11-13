@@ -153,18 +153,27 @@ table {
   width: 300px;
   height: 30vh;
   overflow-y: scroll;
+  border-top: 2px solid #000;
   background-color: rgba(255, 255, 255, 0.35);
-  color: #fff; }
+  color: #000; }
   #Trips li {
+    cursor: pointer;
     width: 300px;
     text-align: center;
     font-size: 1rem;
     font-family: "Open Sans", sans-serif;
     line-height: 1.2em;
     margin: 10px 0; }
+    #Trips li:hover {
+      color: #fff; }
+  #Trips a,
+  #Trips span {
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.35); }
   #Trips .completed {
-    text-decoration: line-through;
     color: #949494; }
+    #Trips .completed p {
+      display: none; }
 
 #Flights {
   width: 300px;
@@ -189,54 +198,59 @@ table {
       font-size: 1rem; }
     #Flights .searchWrapper button {
       color: #000;
-      background-color: rgba(255, 255, 255, 0.35); }
+      background-color: rgba(255, 255, 255, 0.35);
+      display: flex;
+      justify-content: center;
+      align-items: center; }
       #Flights .searchWrapper button:hover {
         background-color: rgba(0, 0, 0, 0.5);
         color: #fff; }
-  #Flights #cityOne,
-  #Flights #cityTwo {
-    display: block;
-    max-width: 100px;
-    border: 1px solid green;
-    width: 300px;
-    height: 25px;
-    opacity: 0;
-    color: #000;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.3rem;
-    position: absolute; }
-  #Flights #cityOne {
-    top: 0; }
-  #Flights #cityTwo {
-    text-align: right;
-    bottom: 0; }
+      #Flights .searchWrapper button img {
+        width: 100px; }
   #Flights .animateContainer {
     position: relative;
     margin-top: 10px;
-    border: 1px solid red;
-    height: 180px; }
-  #Flights a {
-    display: inline-block;
-    padding: 7px;
+    height: 180px;
     overflow: hidden;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.5); }
-    #Flights a text {
-      align: center;
-      decoration: none;
-      transform: uppercase; }
-  #Flights #plane {
-    display: inline-block; }
-  #Flights .path {
-    height: 5px;
-    width: 5px;
-    background-color: #000;
-    position: absolute; }
-  #Flights #path1 {
-    top: 30px;
-    left: 30px; }
+  #Flights #aWrapper {
+    width: 300px;
+    height: 130px;
+    position: absolute;
+    top: 25px; }
+    #Flights #aWrapper img {
+      position: absolute;
+      z-index: 0;
+      height: 80px;
+      width: 95px;
+      top: calc((130px - 80px) / 2);
+      left: 300px; }
+    #Flights #aWrapper div {
+      z-index: 1;
+      position: absolute; }
+      #Flights #aWrapper div a {
+        cursor: pointer;
+        z-index: 20;
+        display: inline-block;
+        padding: 7px;
+        overflow: hidden;
+        color: #fff;
+        height: 30px;
+        width: 90px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: absolute; }
+        #Flights #aWrapper div a:hover {
+          color: #000; }
+      #Flights #aWrapper div .flightsA {
+        top: calc(((130px - 80px) / 2) - 25px);
+        left: -90px; }
+      #Flights #aWrapper div .hotelsA {
+        top: calc(((130px - 80px) / 2) + 40px + 33px);
+        left: -90px; }
 
 #App {
   width: 100vw;

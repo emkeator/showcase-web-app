@@ -6,7 +6,7 @@ export default function Header(props){
         <div id="Header">
             <div className="mobileMakingWrapper">
                 <h1>Welcome, {props.firstname}</h1>
-                <TypeAnimate/> 
+                {/* <TypeAnimate/>  */}
             </div>
         </div>
     )

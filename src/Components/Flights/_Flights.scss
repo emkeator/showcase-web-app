@@ -3,20 +3,16 @@
 
 #Flights {
     width: 300px;
-    // height: 30vh;
     overflow-y: scroll;
-    // background-color: $white-opaque;
 
     color: $white;
     border-top: 2px solid $black;
 
     .searchWrapper {
         height: 80px;
-        // border: 1px solid red;
         display: flex;
         div {
             width: 150px;
-            // border: 1px solid red;
         }
 
         input,
@@ -41,77 +37,79 @@
                 background-color: $black-opaque;
                 color: $white;
             }
-        }
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    #cityOne,
-    #cityTwo {
-        display: block;
-        max-width: 100px;
-        border: 1px solid green;
-        width: 300px;
-        height: 25px;
-        opacity: 0;
-        color: $black;
-        font: {
-            family: $sans;
-            size: 1.3rem;
+            img {
+                width: 100px;
+            }
         }
-        position: absolute;        
-    }
-
-    #cityOne {
-        top: 0;
-    }
-    #cityTwo {
-        text-align: right;
-        bottom: 0;
-        // right: 0;
     }
 
     .animateContainer {
         position: relative;
         margin-top: 10px;
-        border: 1px solid red;
         height: 180px;
-    }
-
-    a {
-        display: inline-block;
-        padding: 7px;
         overflow: hidden;
-        color: $white;
-        font: {
-            family: $sans;
-            size: 1rem;
-        }
-        text {
-            align: center;
-            decoration: none;
-            transform: uppercase;
-        }
         background-color: $black-opaque;
     }
-    #plane {
-        display: inline-block;
-        // position: absolute;
-        // top: 25px;
-        // left: 25px;
+
+    #aWrapper {
         // opacity: 0;
+        width: 300px;
+        height: 130px;
+        position: absolute;
+        top: 25px;
+
+        img {
+            position: absolute;
+            z-index: 0;
+            height: 80px;
+            width: 95px;
+            top: calc((130px - 80px) / 2);
+            left: 300px; //103 px
+        }
+
+        div {
+            z-index: 1;
+            position: absolute;
+
+            a {
+                cursor: pointer;
+                &:hover {
+                    color: $black;
+                }
+                z-index: 20;
+                display: inline-block;
+                padding: 7px;
+                overflow: hidden;
+                color: $white;
+                height: 30px;
+                width: 90px;
+                font: {
+                    family: $sans;
+                    size: 1.2rem;
+                }
+                text: {
+                    align: center;
+                    decoration: none;
+                    transform: uppercase;
+                }
+                position: absolute;
+                
+            }
+            .flightsA {
+                top: calc(((130px - 80px) / 2) - 25px); //0
+                left: -90px;//60
+            }
+            .hotelsA {
+                top: calc(((130px - 80px) / 2) + 40px + 33px);//103
+                left: -90px;//150                
+            }
+        }
     }
 
-    .path{
-        height: 5px;
-        width: 5px;
-        // border-radius: 50%;
-        background-color: $black;
-        position: absolute;        
-    }
-
-    #path1{
-        top: 30px;
-        left: 30px;
-    }
     
 
 }

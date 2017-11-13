@@ -36,7 +36,7 @@ app.post('/api/departurePortCodes', (req, res) => {
             if(apiRes.data.length === 0){
                   res.status(200).json(`Departure city is not valid! Try again.`);
             }
-            res.status(200).send(apiRes.data[0])
+            res.status(200).send(apiRes.data)
       }, err => err.status(404).json('Error'))
 })
 
@@ -50,7 +50,7 @@ app.post('/api/destinationPortCodes', (req, res) => {
             if(apiRes.data.length === 0){
                   res.status(200).json(`Destination city is not valid! Try again.`);
             }
-            res.status(200).send(apiRes.data[0])
+            res.status(200).send(apiRes.data)
       }, err => err.status(404).json('Error'))
 })
 
