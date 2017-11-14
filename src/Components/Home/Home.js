@@ -1,15 +1,16 @@
-import React, {Component} from 'react';
-import Header from '../Header/Header';
-import Trips from '../Trips/Trips';
-import Flights from '../Flights/Flights';
+import React, {Component} from 'react'
+import Header from '../Header/Header'
+import Trips from '../Trips/Trips'
+import Flights from '../Flights/Flights'
+import PackingList from '../PackingList/PackingList'
 
 export default class Home extends Component{
     constructor() {
-        super();
+        super()
         this.state = {
             showFlights: false,
-            showTrips: true,
-            showPacking: false
+            showTrips: false,
+            showPacking: true
         }
 
         this.changeView = this.changeView.bind(this)
@@ -23,23 +24,23 @@ export default class Home extends Component{
                     showTrips: false,
                     showPacking: false
                 })
-                break;
+                break
             case 'Trips':
                 this.setState({
                     showFlights: false,
                     showTrips: true,
                     showPacking: false
                 })
-                break;
+                break
             case 'Packing':
                 this.setState({
                     showFlights: false,
                     showTrips: false,
                     showPacking: true
                 })
-                break;
+                break
             default:
-                break;
+                break
         }
     }
     render(){
@@ -51,7 +52,7 @@ export default class Home extends Component{
                         <section className="choices">
                             <span onClick={() => this.changeView('Flights')}>Explore</span>
                             <span onClick={() => this.changeView('Trips')}>Trips</span>
-                            <span onClick={() => this.changeView('Packing')}>Packing</span>
+                            <span onClick={() => this.changeView('Packing')}>info</span>
                         </section>
                         {
                             this.state.showFlights ?
@@ -63,7 +64,7 @@ export default class Home extends Component{
                         }
                         {
                             this.state.showPacking ?
-                                <Flights/> : null
+                                <PackingList trips={this.props.trips} toggleTripStatus={this.props.toggleTripStatus} updateTrip={this.props.updateTrip} changeView={this.changeView}/> : null
                         }
                         <section className="chat">
                             <span>chat</span>

@@ -83,14 +83,24 @@ export default class Flights extends Component{
     }
 
     makeTrip(){
-        let {departure_port, destination_port} = this.state
+        let {departure_port, destination_port, departure_port_code, destination_port_code} = this.state
         let completed = false,
-            packing_list = []
+            packing_list = [],
+            departure_date = '',
+            return_date = '',
+            hotel = '',
+            budget = 0
         this.props.createTrip({
             departure_port,
             destination_port,
+            departure_port_code,
+            destination_port_code,
             completed,
-            packing_list
+            packing_list,
+            departure_date,
+            return_date,
+            hotel,
+            budget
         })
         this.props.changeView('Trips')
     }

@@ -9,9 +9,6 @@ export default class Trips extends Component{
         this.props.toggleTripStatus(index);
     }
 
-    toggleButtons(index){
-        // TweenMax.to($(`.${index}Buttons`), 0, {display: })
-    }
 
     render(){
         return(
