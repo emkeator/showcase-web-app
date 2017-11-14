@@ -16,11 +16,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "LHR",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Salt Lake City",
@@ -28,11 +27,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "EDI",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "New York City",
@@ -40,11 +38,10 @@ class App extends Component {
                     "departure_port_code": "NYC",
                     "destination_port_code": "AKL",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Auckland",
@@ -52,11 +49,10 @@ class App extends Component {
                     "departure_port_code": "AKL",
                     "destination_port_code": "SYD",
                     "completed": true,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Bali",
@@ -64,11 +60,10 @@ class App extends Component {
                     "departure_port_code": "BPN",
                     "destination_port_code": "BPN",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Honolulu",
@@ -76,11 +71,10 @@ class App extends Component {
                     "departure_port_code": "HNL",
                     "destination_port_code": "MEL",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Berlin",
@@ -88,11 +82,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "OSL",
                     "completed": true,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Tulum",
@@ -100,11 +93,10 @@ class App extends Component {
                     "departure_port_code": "MEX",
                     "destination_port_code": "SAN",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Cancun",
@@ -112,11 +104,10 @@ class App extends Component {
                     "departure_port_code": "CUN",
                     "destination_port_code": "SEA",
                     "completed": true,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Salt Lake City",
@@ -124,11 +115,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "YYC",
                     "completed": true,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                   {
                     "departure_port": "Rome",
@@ -136,11 +126,10 @@ class App extends Component {
                     "departure_port_code": "FCO",
                     "destination_port_code": "ATH",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "London",
@@ -148,11 +137,10 @@ class App extends Component {
                     "departure_port_code": "LHR",
                     "destination_port_code": "FLR",
                     "completed": true,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Cairo",
@@ -160,11 +148,10 @@ class App extends Component {
                     "departure_port_code": "CAI",
                     "destination_port_code": "YBQ",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 },
                 {
                     "departure_port": "Washington, D.C.",
@@ -172,11 +159,10 @@ class App extends Component {
                     "departure_port_code": "DCA",
                     "destination_port_code": "DCA",
                     "completed": false,
-                    "packing_list": [],
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": 0
+                    "budget": ""
                 }
             ]
       }
@@ -184,6 +170,7 @@ class App extends Component {
       this.toggleTripStatus = this.toggleTripStatus.bind(this)
       this.createTrip = this.createTrip.bind(this)
       this.updateTrip = this.updateTrip.bind(this)
+      this.deleteTrip = this.deleteTrip.bind(this)
   }
 
   componentWillMount(){
@@ -216,6 +203,14 @@ class App extends Component {
       })
   }
 
+  deleteTrip(index){
+      let x = this.state.trips.slice(0)
+      x.splice(index, 1)
+      this.setState({
+          trips: x
+      })
+  }
+
   render() {
     return (
       <div id="App">
@@ -225,7 +220,7 @@ class App extends Component {
         {
           this.state.userOnSession ?
 
-            <Home trips={this.state.trips} toggleTripStatus={this.toggleTripStatus} createTrip={this.createTrip} updateTrip={this.updateTrip}/>
+            <Home trips={this.state.trips} toggleTripStatus={this.toggleTripStatus} createTrip={this.createTrip} updateTrip={this.updateTrip} deleteTrip={this.deleteTrip}/>
             :
             <Login/>
         }

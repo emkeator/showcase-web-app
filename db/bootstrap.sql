@@ -13,6 +13,13 @@ CREATE TABLE IF NOT EXISTS trips
     user_id VARCHAR(100),
     departure_port VARCHAR(100),
     destination_port VARCHAR(100),
-    packing_list TEXT
+    hotel TEXT,
+    departure_port_code TEXT,
+    destination_port_code TEXT,
+    completed BOOLEAN,
+    departure_date TEXT,
+    return_date TEXT,
+    hotel TEXT,
+    budget TEXT
 );
 

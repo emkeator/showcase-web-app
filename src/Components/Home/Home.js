@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../Header/Header'
 import Trips from '../Trips/Trips'
 import Flights from '../Flights/Flights'
-import PackingList from '../PackingList/PackingList'
+import Detail from '../Detail/Detail'
 
 export default class Home extends Component{
     constructor() {
@@ -64,7 +64,7 @@ export default class Home extends Component{
                         }
                         {
                             this.state.showPacking ?
-                                <PackingList trips={this.props.trips} toggleTripStatus={this.props.toggleTripStatus} updateTrip={this.props.updateTrip} changeView={this.changeView}/> : null
+                                <Detail trips={this.props.trips} toggleTripStatus={this.props.toggleTripStatus} updateTrip={this.props.updateTrip} changeView={this.changeView} deleteTrip={this.props.deleteTrip}/> : null
                         }
                         <section className="chat">
                             <span>chat</span>
