@@ -18,7 +18,7 @@ class App extends Component {
                     "completed": false,
                     "departure_date": "",
                     "return_date": "",
-                    "hotel": "",
+                    "hotel": "St. Regis Marylebone",
                     "budget": ""
                 },
                 {
@@ -41,7 +41,7 @@ class App extends Component {
                     "departure_date": "",
                     "return_date": "",
                     "hotel": "",
-                    "budget": ""
+                    "budget": "3000.00"
                 },
                 {
                     "departure_port": "Auckland",
@@ -49,21 +49,21 @@ class App extends Component {
                     "departure_port_code": "AKL",
                     "destination_port_code": "SYD",
                     "completed": true,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "01/01/17",
+                    "return_date": "02/04/17",
+                    "hotel": "Marriott Harbor Bridge",
+                    "budget": "4000.00"
                 },
                 {
-                    "departure_port": "Bali",
-                    "destination_port": "Bora Bora",
-                    "departure_port_code": "BPN",
+                    "departure_port": "Sydney",
+                    "destination_port": "Bali",
+                    "departure_port_code": "SYD",
                     "destination_port_code": "BPN",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "02/02/18",
+                    "return_date": "02/09/18",
+                    "hotel": "Overwater Suites",
+                    "budget": "5000.00"
                 },
                 {
                     "departure_port": "Honolulu",
@@ -71,10 +71,10 @@ class App extends Component {
                     "departure_port_code": "HNL",
                     "destination_port_code": "MEL",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "12/13/19",
+                    "return_date": "12/22/19",
+                    "hotel": "Marriott Main Street",
+                    "budget": "4000.00"
                 },
                 {
                     "departure_port": "Berlin",
@@ -82,10 +82,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "OSL",
                     "completed": true,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "06/07/17",
+                    "return_date": "06/17/17",
+                    "hotel": "Babygulrot Suites",
+                    "budget": "5000.00"
                 },
                 {
                     "departure_port": "Tulum",
@@ -93,10 +93,10 @@ class App extends Component {
                     "departure_port_code": "MEX",
                     "destination_port_code": "SAN",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "04/04/18",
+                    "return_date": "04/16/18",
+                    "hotel": "Hotel Coronado",
+                    "budget": "4000.00"
                 },
                 {
                     "departure_port": "Cancun",
@@ -104,10 +104,10 @@ class App extends Component {
                     "departure_port_code": "CUN",
                     "destination_port_code": "SEA",
                     "completed": true,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "09/17/17",
+                    "return_date": "09/28/17",
+                    "hotel": "Marriott Waterfront",
+                    "budget": "3500.00"
                 },
                 {
                     "departure_port": "Salt Lake City",
@@ -115,10 +115,10 @@ class App extends Component {
                     "departure_port_code": "SLC",
                     "destination_port_code": "YYC",
                     "completed": true,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "12/05/15",
+                    "return_date": "12/15/15",
+                    "hotel": "St. Regis Banff",
+                    "budget": "6000.00"
                 },
                   {
                     "departure_port": "Rome",
@@ -126,10 +126,10 @@ class App extends Component {
                     "departure_port_code": "FCO",
                     "destination_port_code": "ATH",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "11/03/18",
+                    "return_date": "11/08/18",
+                    "hotel": "Hestian Hotel",
+                    "budget": "1500.00"
                 },
                 {
                     "departure_port": "London",
@@ -137,10 +137,10 @@ class App extends Component {
                     "departure_port_code": "LHR",
                     "destination_port_code": "FLR",
                     "completed": true,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "10/10/17",
+                    "return_date": "10/12/17",
+                    "hotel": "Montage Florence",
+                    "budget": "5000.00"
                 },
                 {
                     "departure_port": "Cairo",
@@ -148,10 +148,10 @@ class App extends Component {
                     "departure_port_code": "CAI",
                     "destination_port_code": "YBQ",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "05/18/19",
+                    "return_date": "05/28/19",
+                    "hotel": "Quebecois Lodge",
+                    "budget": "3000.00"
                 },
                 {
                     "departure_port": "Washington, D.C.",
@@ -159,10 +159,10 @@ class App extends Component {
                     "departure_port_code": "DCA",
                     "destination_port_code": "DCA",
                     "completed": false,
-                    "departure_date": "",
-                    "return_date": "",
-                    "hotel": "",
-                    "budget": ""
+                    "departure_date": "07/04/18",
+                    "return_date": "07/04/18",
+                    "hotel": "N/A",
+                    "budget": "400.00"
                 }
             ]
       }
@@ -177,14 +177,24 @@ class App extends Component {
     //check if user on session - if yes, change state.userOnSession to true
   }
 
-  toggleTripStatus(index){
-    let x = this.state.trips.slice(0)
-    x[index].completed = !x[index].completed
-    let tripToUpdate = x[index]
-    this.setState({
-        trips: x
-    })
-    //axios call to update tripToUpdate in db
+  toggleTripStatus(index, goAgain){
+    if (goAgain) {
+        let x = this.state.trips.slice(0)
+        let trip = Object.assign({}, x[index], {completed: false, departure_date: '', return_date: ''})
+        x.unshift(trip)
+        this.setState({
+            trips: x
+        })
+    } else {
+        let x = this.state.trips.slice(0)
+        x[index].completed = !x[index].completed
+        let tripToUpdate = x[index]
+        this.setState({
+            trips: x
+        })
+    }
+    
+    //axios call to update tripToUpdate in db, or trips
   }
 
   createTrip(tripObject){

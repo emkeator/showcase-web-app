@@ -13,11 +13,13 @@
 @import './Components/Header/Header';
 @import './Components/Trips/Trips';
 @import './Components/Flights/Flights';
+@import './Components/Detail/Detail';
+@import './Components/Chat/Chat';
 
 #App {
     width: 100vw;
     height: 100vh;
-    overflow: scroll;
+    overflow: hidden;
     
     header {
         // border: 1px solid blue;

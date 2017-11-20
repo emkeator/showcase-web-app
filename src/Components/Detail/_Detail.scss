@@ -1,0 +1,167 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#Detail {
+    width: 300px;
+    height: 35vh;
+    overflow-y: scroll;
+    border-top: 2px solid $black;
+    background-color: $white-opaque;
+
+    color: $black;
+    select {
+        width: 250px;
+        height: 30px;
+        margin: 0 auto;
+        color: $black;
+        background-color: $clear;
+        font: {
+            family: $sans;
+            size: 1rem;
+        }
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        border: none;
+        outline: none;
+    }
+    .tripDisplay{
+        width: 250px;
+        margin: 0 auto;
+        padding-top: 10px;        
+        font: {
+            family: $sans;
+            size: 1rem;
+        }
+
+        color: $white;
+        
+        
+        div {
+            padding-left: 7px;
+            display: flex;
+            align-items: center;
+            background-color: $black-opaque;
+            span {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                width: 78px;
+                height: 30px;
+                background-color: none !important;
+                border-right: 2px solid black;
+            }
+            text: {
+                align: left;
+                transform: uppercase;
+            }
+            width: 250px;
+            overflow: scroll;
+        }
+
+        .budgetInputWrapper {
+            width: 165px;
+            border: none;
+            padding-left: 7px;
+        }
+
+        input {
+            width: 165px;
+            height: 30px;
+            color: $white;
+            background-color: $clear;
+            border: none;            
+            font: {
+                family: $sans;
+                size: 1rem;
+            }
+            text: {
+                transform: uppercase;
+            }
+            outline: none;
+            padding-left: 7px;
+            
+
+        }
+        .budgetInput {
+            width: 155px;
+            padding-left: 0;
+        }
+
+        p {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            margin-top: 10px;
+            padding-left: 7px;
+            a {
+                color: $white;
+                text-decoration: none;
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+        .wasInputSpan {
+            min-width: 165px;
+            height: 30px;
+            color: $white;
+            background-color: $clear;
+            border: none;            
+            font: {
+                family: $sans;
+                size: 1rem;
+            }
+            text: {
+                transform: uppercase;
+            }
+            padding: 0 7px;
+            white-space: nowrap;
+            overflow-x: scroll;
+            
+        }
+
+        .buttonWrapper {
+            width: 250px;
+            border-top: 2px solid $black;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: $clear;
+            button {
+                cursor: pointer;
+                width: calc(250px / 3);
+                margin: 0;
+                height: 30px;
+                border: none;
+                background-color: $black-opaque;
+                color: $white;
+                font: {
+                    family: $sans;
+                    size: 0.8rem;
+                }
+                text: {
+                    align: center;
+                    transform: uppercase;
+                }
+                &:hover{
+                    color: $black;
+                    background-color: $clear;
+                }
+                outline: none;
+                
+            }
+        }
+
+        
+
+    }
+
+    .completed {
+        .buttonWrapper {
+            .againButton {
+                width: calc((250px / 3) * 2);
+            }
+        }
+    }
+
+}

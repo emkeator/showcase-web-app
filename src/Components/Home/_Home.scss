@@ -19,9 +19,10 @@
             @include mobile-making-wrapper;
             margin: 20px 0 50px 0;
             // border: 1px solid green;
+            // position: relative;
         }
 
-        span {
+        .spanChoice {
             cursor: pointer;
             font: {
                 family: $sans;

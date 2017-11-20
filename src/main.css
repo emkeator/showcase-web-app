@@ -9,6 +9,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -105,7 +107,7 @@ table {
     #Home .homeWrapper .mobileMakingWrapper {
       width: 300px;
       margin: 20px 0 50px 0; }
-    #Home .homeWrapper span {
+    #Home .homeWrapper .spanChoice {
       cursor: pointer;
       font-family: "Open Sans", sans-serif;
       font-size: 1.2rem;
@@ -116,7 +118,7 @@ table {
       text-transform: uppercase;
       padding: 7px 0;
       background-color: rgba(0, 0, 0, 0.5); }
-      #Home .homeWrapper span:hover {
+      #Home .homeWrapper .spanChoice:hover {
         color: #000;
         background-color: rgba(255, 255, 255, 0.35); }
     #Home .homeWrapper .choices {
@@ -197,6 +199,7 @@ table {
       font-family: "Open Sans", sans-serif;
       font-size: 1rem; }
     #Flights .searchWrapper button {
+      cursor: pointer;
       color: #000;
       background-color: rgba(255, 255, 255, 0.35);
       display: flex;
@@ -252,10 +255,209 @@ table {
         top: calc(((130px - 80px) / 2) + 40px + 33px);
         left: -90px; }
 
+#Detail {
+  width: 300px;
+  height: 35vh;
+  overflow-y: scroll;
+  border-top: 2px solid #000;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #000; }
+  #Detail select {
+    width: 250px;
+    height: 30px;
+    margin: 0 auto;
+    color: #000;
+    background-color: transparent;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: none;
+    outline: none; }
+  #Detail .tripDisplay {
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #fff; }
+    #Detail .tripDisplay div {
+      padding-left: 7px;
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: left;
+      text-transform: uppercase;
+      width: 250px;
+      overflow: scroll; }
+      #Detail .tripDisplay div span {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        width: 78px;
+        height: 30px;
+        background-color: none !important;
+        border-right: 2px solid black; }
+    #Detail .tripDisplay .budgetInputWrapper {
+      width: 165px;
+      border: none;
+      padding-left: 7px; }
+    #Detail .tripDisplay input {
+      width: 165px;
+      height: 30px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      outline: none;
+      padding-left: 7px; }
+    #Detail .tripDisplay .budgetInput {
+      width: 155px;
+      padding-left: 0; }
+    #Detail .tripDisplay p {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      margin-top: 10px;
+      padding-left: 7px; }
+      #Detail .tripDisplay p a {
+        color: #fff;
+        text-decoration: none; }
+        #Detail .tripDisplay p a:hover {
+          color: #000; }
+    #Detail .tripDisplay .wasInputSpan {
+      min-width: 165px;
+      height: 30px;
+      color: #fff;
+      background-color: transparent;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 0 7px;
+      white-space: nowrap;
+      overflow-x: scroll; }
+    #Detail .tripDisplay .buttonWrapper {
+      width: 250px;
+      border-top: 2px solid #000;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: transparent; }
+      #Detail .tripDisplay .buttonWrapper button {
+        cursor: pointer;
+        width: calc(250px / 3);
+        margin: 0;
+        height: 30px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8rem;
+        text-align: center;
+        text-transform: uppercase;
+        outline: none; }
+        #Detail .tripDisplay .buttonWrapper button:hover {
+          color: #000;
+          background-color: transparent; }
+  #Detail .completed .buttonWrapper .againButton {
+    width: calc((250px / 3) * 2); }
+
+#Chat {
+  width: 300px;
+  height: 480px;
+  overflow-y: scroll;
+  color: #000;
+  position: absolute;
+  bottom: 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem; }
+  #Chat span {
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 7px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #000; }
+    #Chat span:hover {
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.35); }
+  #Chat .chatContainer {
+    height: 447px; }
+  #Chat .messageWrapper {
+    width: 300px;
+    background-color: rgba(229, 229, 229, 0.75);
+    height: calc(365px - 30px);
+    height: 365px;
+    overflow: scroll; }
+    #Chat .messageWrapper .message {
+      width: 170px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px; }
+      #Chat .messageWrapper .message em {
+        color: #949494;
+        font-size: 0.6rem;
+        margin: 0;
+        padding: 0; }
+      #Chat .messageWrapper .message p {
+        width: 150px;
+        margin: 5px 0;
+        font-size: 1rem; }
+    #Chat .messageWrapper .admin {
+      margin-left: 10px;
+      margin-top: 10px;
+      float: left; }
+    #Chat .messageWrapper .user {
+      margin-right: 10px;
+      margin-top: 10px;
+      float: right;
+      background-color: #000; }
+  #Chat .inputBar {
+    width: 300px;
+    height: 80px;
+    border-top: 2px solid #000;
+    display: flex; }
+    #Chat .inputBar textarea {
+      width: 230px;
+      border: none;
+      height: calc(80px - 14px);
+      height: 80px;
+      outline: none;
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.35);
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.8rem;
+      padding: 7px;
+      margin: 0;
+      resize: none; }
+    #Chat .inputBar button {
+      width: 70px;
+      border: none;
+      height: 80px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      padding: 7px;
+      margin: 0;
+      outline: none; }
+      #Chat .inputBar button:hover {
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.35); }
+
 #App {
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   /*Gif by David Kanigan*/
   background-image: url("https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600");
   background-size: cover;

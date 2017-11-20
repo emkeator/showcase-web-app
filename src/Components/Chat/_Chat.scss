@@ -1,0 +1,146 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#Chat {
+    width: 300px;
+    height: 480px;
+    // height: 30px;
+    overflow-y: scroll;
+    // border-top: 2px solid $black;
+    // background-color: $black-opaque;
+
+    color: $black;
+    
+    position: absolute;
+    bottom: 0px;
+    font: {
+        family: $sans;
+        size: 1.2rem;
+    }
+
+    span {
+        cursor: pointer;
+        font: {
+            family: $sans;
+            size: 1.2rem;
+        }
+        color: $white;
+        display: inline-block;
+        width: 300px;
+        text: {
+            align: center;
+            transform: uppercase;
+        }
+        padding: 7px 0;
+        background-color: $black-opaque;  
+        border-bottom: 2px solid $black;
+                  
+        &:hover {
+            color: $black;
+            background-color: $white-opaque;
+        }
+
+    }
+    .chatContainer {
+        // background-color: $black-opaque-2;
+        height: 447px;
+        // border: 15px solid $black-opaque;
+        // border-right: 20px solid $black-opaque;
+        // display: flex;
+        // justify-content: center;
+        // flex-wrap: wrap;
+        
+    }
+
+    .messageWrapper {
+        // width: calc(300px - 30px);
+        width: 300px;
+        background-color: $white-opaque-2;
+        height: calc(365px - 30px);
+        height: 365px;
+        overflow: scroll;
+
+        .message {
+            width: 170px;
+            background-color: $black-opaque;
+            color: $white;
+            padding: 10px;
+            em {
+                color: $snowy-sky;                
+                font: {
+                    size: 0.6rem;
+
+                }
+                margin: 0;
+                padding: 0;
+            }
+            p {
+                width: 150px;
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+        }
+
+        .admin {
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+        }
+
+        .user {
+            margin-right: 10px;
+            margin-top: 10px;
+            float: right;
+            background-color: $black;
+        }
+    }
+
+    .inputBar {
+        // width: calc(300px - 30px);
+        width: 300px;        
+        // height: calc(80px);
+        height: 80px;
+        // background-color: $white-opaque-2;
+        border-top: 2px solid $black;
+        display: flex;
+
+        textarea {
+            width: 230px;
+            border: none;
+            height: calc(80px - 14px);
+            height: 80px;
+            outline: none;
+            color: $black;
+            background-color: $white-opaque;
+            font: {
+                family: $sans;
+                size: 0.8rem;
+            }
+            padding: 7px;
+            margin: 0;
+            resize: none;
+            
+        }
+        button {
+            width:70px;
+            border: none;
+            height: 80px;
+            background-color: $black-opaque;
+            color: $white;
+            font: {
+                family: $sans;
+                size: 1.2rem;
+            }
+            text-transform: uppercase;
+            padding: 7px;
+            margin: 0;
+            outline: none;
+            &:hover {
+                color: $black;
+                background-color: $white-opaque;
+            }
+            
+        }
+    }
+
+}
