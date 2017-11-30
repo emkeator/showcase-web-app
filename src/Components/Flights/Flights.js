@@ -45,7 +45,7 @@ export default class Flights extends Component{
 
     getCodes(){
         let {destination_port, departure_port} = this.state;
-        axios.post(`http://localhost:3001/api/departurePortCodes`, {departure_port}).then(res => {
+        axios.post(`/api/departurePortCodes`, {departure_port}).then(res => {
             console.log(res.data);
             if (res.data === `Departure city is not valid! Try again.`) {
                 alert(`Departure city ${departure_port} is not valid! Try again.`)
@@ -56,7 +56,7 @@ export default class Flights extends Component{
             }
             
         })
-        axios.post(`http://localhost:3001/api/destinationPortCodes`, {destination_port}).then(res => {
+        axios.post(`/api/destinationPortCodes`, {destination_port}).then(res => {
             console.log(res.data);
             let hotelVal;
             if (res.data === `Destination city is not valid! Try again.`) {
