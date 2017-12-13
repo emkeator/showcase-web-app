@@ -7,8 +7,9 @@
     justify-content: center;
 
     .mobileMakingWrapper{
-        @include mobile-making-wrapper();
-        height: 250px;
+        // @include mobile-making-wrapper();
+        width: 300px;
+        // height: 250px;
         padding: 20px 0;
         margin-top: 0;
 
@@ -16,7 +17,7 @@
             width: 300px;
             color: $snowy-sky;  
             color: $black;  
-            margin-bottom: 20px;          
+            // margin-bottom: 20px;          
             font: {
                 family: $sans;
                 size: 2rem;

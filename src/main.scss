@@ -15,6 +15,7 @@
 @import './Components/Flights/Flights';
 @import './Components/Detail/Detail';
 @import './Components/Chat/Chat';
+@import './Components/PageNotFound/PageNotFound';
 
 #App {
     width: 100vw;
@@ -35,21 +36,25 @@
             family: $sans;
             size: 3rem;
         }
-        background-color: $white-opaque;
+        background-color: $white-opaque-3;
     }
     /*Gif by David Kanigan*/    
-    background-image: url('https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600');
+    // background-image: url('https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600');
     // background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');    
+    /* Image by Toa Heftiba */
+    background-image: url('https://images.unsplash.com/photo-1496677676553-739055930416?auto=format&fit=crop&w=698&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+    
     background-size: cover;
     background-position: center;
 }
 
-@media (min-width: 500px) {
-    /*Photo by Benjamin Voros on Unsplash*/
-    #App {
-        background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-    }
-}
+// @media (min-width: 500px) {
+//     /*Photo by Benjamin Voros on Unsplash*/
+//     #App {
+//         // background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+//         background-image: url('https://images.unsplash.com/photo-1496677676553-739055930416?auto=format&fit=crop&w=698&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+//     }
+// }
 
 
 

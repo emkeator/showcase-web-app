@@ -7,7 +7,7 @@ export default class Login extends Component{
             <div id="Login">
                 <div className="mobileMakingWrapper">
                     <TypeAnimate/>
-                    <a>
+                    <a href="http://localhost:3003/auth">
                         <p>LOGIN</p>
                         <p className="secondary">Or Sign Up</p>
                     </a>

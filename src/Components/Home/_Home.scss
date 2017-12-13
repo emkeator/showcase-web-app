@@ -5,10 +5,7 @@
     width: 100vw;
     min-height: calc(100vh - 90px);
     overflow: scroll;
-    // display: flex;
-    // justify-content: center;
-    // flex-wrap: wrap;
-    background-color: $white-opaque;
+    background-color: $white-opaque-3;
 
     .homeWrapper {
         width: 100vw;
@@ -18,8 +15,6 @@
         .mobileMakingWrapper {
             @include mobile-making-wrapper;
             margin: 20px 0 50px 0;
-            // border: 1px solid green;
-            // position: relative;
         }
 
         .spanChoice {
@@ -39,13 +34,21 @@
             background-color: $black-opaque;            
             &:hover {
                 color: $black;
-                background-color: $white-opaque;
+                background-color: $clear;
             }
         }
 
         .choices {
             width: 300px;
-            // border: 1px solid red;
+            border-bottom: 2px solid $black;
+
+        }
+
+        .modules {
+            height: 300px;
+            overflow: scroll;
+
+
         }
 
         .chat{

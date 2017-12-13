@@ -155,7 +155,7 @@ export default class Detail extends Component{
                             
                         }
                         <p>
-                            Find <a className="flightsA" href={`https://www.skyscanner.com/transport/flights/${this.state.currentTrip.departure_port_code}/${this.state.currentTrip.destination_port_code}/`} target="_blank">flights</a>, <a className="hotelsA" href={`https://www.skyscanner.com/hotels/${this.state.destination_hotel_code}/`} target="_blank">hotels</a> with Skyscanner.                           
+                            Find <a className="flightsA" href={`https://www.skyscanner.com/transport/flights/${this.state.currentTrip.departure_port_code}/${this.state.currentTrip.destination_port_code}/`} target="_blank">flights</a>, <a className="hotelsA" href={`https://www.skyscanner.com/hotels/${this.state.currentTrip.destination_hotel_code}/`} target="_blank">hotels</a> with Skyscanner.                           
                         </p>
                     </div>
 

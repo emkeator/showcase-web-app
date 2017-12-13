@@ -1,0 +1,25 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+#PageNotFound {
+    width: 100vw;
+    min-height: calc(100vh - 90px);
+    overflow: scroll;
+    background-color: $white-opaque-3;
+
+    text-align: center;
+    padding-top: 20vh;
+    font: {
+        family: $sans;
+        size: 2rem;
+    }
+
+    img {
+        height: 70px;
+        padding-top: 20px;
+    }
+    
+
+    
+
+}

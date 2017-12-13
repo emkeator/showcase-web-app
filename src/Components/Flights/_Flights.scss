@@ -3,10 +3,10 @@
 
 #Flights {
     width: 300px;
-    overflow-y: scroll;
-
+    // overflow-y: scroll;
+    // background-color: $white;
     color: $white;
-    border-top: 2px solid $black;
+    // border-top: 2px solid $black;
 
     .searchWrapper {
         height: 80px;
@@ -32,10 +32,10 @@
 
         button {
             cursor: pointer;
-            color: $black;
-            background-color: $white-opaque;
+            color: $white;
+            background-color: $snowy-sky;
             &:hover{
-                background-color: $black-opaque;
+                background-color: $clear;
                 color: $white;
             }
             display: flex;

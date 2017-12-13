@@ -11,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,20 +67,21 @@ table {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgba(255, 255, 255, 0.35); }
+  background-color: rgba(255, 255, 255, 0.45); }
   #Login .mobileMakingWrapper {
     width: 300px;
     margin-top: 50px; }
   #Login a {
     display: block;
     width: 300px;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
-    margin-top: 30px; }
+    padding: 20px 0; }
     #Login a .secondary {
       font-size: 0.8rem;
       margin-top: 10px; }
@@ -87,19 +89,19 @@ table {
 .type-wrap {
   width: 300px;
   height: 150px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   padding-top: 60px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem; }
   .type-wrap span {
-    color: #fff; }
+    color: #000; }
 
 #Home {
   width: 100vw;
   min-height: calc(100vh - 90px);
   overflow: scroll;
-  background-color: rgba(255, 255, 255, 0.35); }
+  background-color: rgba(255, 255, 255, 0.45); }
   #Home .homeWrapper {
     width: 100vw;
     display: flex;
@@ -117,12 +119,16 @@ table {
       text-align: center;
       text-transform: uppercase;
       padding: 7px 0;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: black; }
       #Home .homeWrapper .spanChoice:hover {
         color: #000;
-        background-color: rgba(255, 255, 255, 0.35); }
+        background-color: transparent; }
     #Home .homeWrapper .choices {
-      width: 300px; }
+      width: 300px;
+      border-bottom: 2px solid #000; }
+    #Home .homeWrapper .modules {
+      height: 300px;
+      overflow: scroll; }
     #Home .homeWrapper .chat {
       width: 300px;
       position: absolute;
@@ -137,14 +143,12 @@ table {
   justify-content: center; }
   #Header .mobileMakingWrapper {
     width: 300px;
-    height: 250px;
     padding: 20px 0;
     margin-top: 0; }
     #Header .mobileMakingWrapper h1 {
       width: 300px;
       color: #949494;
       color: #000;
-      margin-bottom: 20px;
       font-family: "Open Sans", sans-serif;
       font-size: 2rem;
       line-height: 1.2em;
@@ -153,10 +157,6 @@ table {
 
 #Trips {
   width: 300px;
-  height: 30vh;
-  overflow-y: scroll;
-  border-top: 2px solid #000;
-  background-color: rgba(255, 255, 255, 0.35);
   color: #000; }
   #Trips li {
     cursor: pointer;
@@ -171,7 +171,7 @@ table {
   #Trips a,
   #Trips span {
     color: #000;
-    background-color: rgba(255, 255, 255, 0.35); }
+    background-color: white; }
   #Trips .completed {
     color: #949494; }
     #Trips .completed p {
@@ -179,9 +179,7 @@ table {
 
 #Flights {
   width: 300px;
-  overflow-y: scroll;
-  color: #fff;
-  border-top: 2px solid #000; }
+  color: #fff; }
   #Flights .searchWrapper {
     height: 80px;
     display: flex; }
@@ -192,7 +190,7 @@ table {
       width: 150px;
       height: 40px;
       padding: 7px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: black;
       border: none;
       outline: none;
       color: #fff;
@@ -200,13 +198,13 @@ table {
       font-size: 1rem; }
     #Flights .searchWrapper button {
       cursor: pointer;
-      color: #000;
-      background-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+      background-color: #949494;
       display: flex;
       justify-content: center;
       align-items: center; }
       #Flights .searchWrapper button:hover {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: transparent;
         color: #fff; }
       #Flights .searchWrapper button img {
         width: 100px; }
@@ -215,7 +213,7 @@ table {
     margin-top: 10px;
     height: 180px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: black; }
   #Flights #aWrapper {
     width: 300px;
     height: 130px;
@@ -257,10 +255,6 @@ table {
 
 #Detail {
   width: 300px;
-  height: 35vh;
-  overflow-y: scroll;
-  border-top: 2px solid #000;
-  background-color: rgba(255, 255, 255, 0.35);
   color: #000; }
   #Detail select {
     width: 250px;
@@ -286,7 +280,7 @@ table {
       padding-left: 7px;
       display: flex;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: black;
       text-align: left;
       text-transform: uppercase;
       width: 250px;
@@ -352,7 +346,7 @@ table {
         margin: 0;
         height: 30px;
         border: none;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: black;
         color: #fff;
         font-family: "Open Sans", sans-serif;
         font-size: 0.8rem;
@@ -367,13 +361,14 @@ table {
 
 #Chat {
   width: 300px;
-  height: 480px;
-  overflow-y: scroll;
+  height: 30px;
+  overflow-y: hidden;
   color: #000;
   position: absolute;
   bottom: 0px;
   font-family: "Open Sans", sans-serif;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  z-index: 1; }
   #Chat span {
     cursor: pointer;
     font-family: "Open Sans", sans-serif;
@@ -384,24 +379,28 @@ table {
     text-align: center;
     text-transform: uppercase;
     padding: 7px 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
     border-bottom: 2px solid #000; }
     #Chat span:hover {
       color: #000;
-      background-color: rgba(255, 255, 255, 0.35); }
+      background-color: transparent; }
   #Chat .chatContainer {
     height: 447px; }
   #Chat .messageWrapper {
     width: 300px;
-    background-color: rgba(229, 229, 229, 0.75);
+    background-color: transparent;
     height: calc(365px - 30px);
     height: 365px;
-    overflow: scroll; }
+    overflow-y: scroll;
+    padding-bottom: 10px; }
     #Chat .messageWrapper .message {
       width: 170px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: black;
       color: #fff;
-      padding: 10px; }
+      padding: 10px;
+      word-break: keep-all;
+      word-wrap: break-word;
+      text-align: left; }
       #Chat .messageWrapper .message em {
         color: #949494;
         font-size: 0.6rem;
@@ -416,10 +415,13 @@ table {
       margin-top: 10px;
       float: left; }
     #Chat .messageWrapper .user {
+      color: #000;
       margin-right: 10px;
       margin-top: 10px;
       float: right;
-      background-color: #000; }
+      background-color: #ccc; }
+      #Chat .messageWrapper .user em {
+        color: #fff; }
   #Chat .inputBar {
     width: 300px;
     height: 80px;
@@ -432,7 +434,7 @@ table {
       height: 80px;
       outline: none;
       color: #000;
-      background-color: rgba(255, 255, 255, 0.35);
+      background-color: transparent;
       font-family: "Open Sans", sans-serif;
       font-size: 0.8rem;
       padding: 7px;
@@ -442,7 +444,7 @@ table {
       width: 70px;
       border: none;
       height: 80px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: black;
       color: #fff;
       font-family: "Open Sans", sans-serif;
       font-size: 1.2rem;
@@ -452,14 +454,28 @@ table {
       outline: none; }
       #Chat .inputBar button:hover {
         color: #000;
-        background-color: rgba(255, 255, 255, 0.35); }
+        background-color: transparent; }
+
+#PageNotFound {
+  width: 100vw;
+  min-height: calc(100vh - 90px);
+  overflow: scroll;
+  background-color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  padding-top: 20vh;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem; }
+  #PageNotFound img {
+    height: 70px;
+    padding-top: 20px; }
 
 #App {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   /*Gif by David Kanigan*/
-  background-image: url("https://davidkanigan.files.wordpress.com/2014/10/tgif-plane-take-off.gif?w=600");
+  /* Image by Toa Heftiba */
+  background-image: url("https://images.unsplash.com/photo-1496677676553-739055930416?auto=format&fit=crop&w=698&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
   background-size: cover;
   background-position: center; }
   #App header {
@@ -471,9 +487,4 @@ table {
     height: 90px;
     font-family: "Open Sans", sans-serif;
     font-size: 3rem;
-    background-color: rgba(255, 255, 255, 0.35); }
-
-@media (min-width: 500px) {
-  /*Photo by Benjamin Voros on Unsplash*/
-  #App {
-    background-image: url("https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2734&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"); } }
+    background-color: rgba(255, 255, 255, 0.45); }

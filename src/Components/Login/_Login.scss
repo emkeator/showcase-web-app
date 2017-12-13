@@ -7,18 +7,18 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: $white-opaque;
+    background-color: $white-opaque-3;
 
     .mobileMakingWrapper {
         @include mobile-making-wrapper;
         margin-top: 50px;
     }
-
     a {
         display: block;
         width: 300px;
+        background-color: $black;
         // border: 1px solid blue;
-        color: $black;
+        color: $white;
         text: {
             align: center;
             transform: uppercase;
@@ -28,12 +28,14 @@
             family: $sans;
             size: 1.5rem;
         }
-        margin-top: 30px;
+        // margin-top: 30px;
+        padding: 20px 0;
 
         .secondary{
             font-size: 0.8rem;
             margin-top: 10px;
         }
+
     }
 
 }

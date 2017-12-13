@@ -55,6 +55,8 @@ export default class Flights extends Component{
                 })
             }
             
+        }).catch(err => {
+            alert(`Something's up! ${err.response.statusText} ${err.response.status}.`)
         })
         axios.post(`/api/destinationPortCodes`, {destination_port}).then(res => {
             console.log(res.data);
@@ -73,6 +75,8 @@ export default class Flights extends Component{
                 })
             }
             
+        }).catch(err => {
+            alert(`Something's up! ${err.response.statusText} ${err.response.status}.`)
         })
     }
 
@@ -83,7 +87,7 @@ export default class Flights extends Component{
     }
 
     makeTrip(){
-        let {departure_port, destination_port, departure_port_code, destination_port_code} = this.state
+        let {departure_port, destination_port, departure_port_code, destination_port_code, destination_hotel_code} = this.state
         let completed = false,
             departure_date = '',
             return_date = '',
@@ -94,6 +98,7 @@ export default class Flights extends Component{
             destination_port,
             departure_port_code,
             destination_port_code,
+            destination_hotel_code,
             completed,
             departure_date,
             return_date,

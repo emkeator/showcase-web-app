@@ -3,9 +3,9 @@
 
 #Chat {
     width: 300px;
-    height: 480px;
+    height: 30px;
     // height: 30px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     // border-top: 2px solid $black;
     // background-color: $black-opaque;
 
@@ -17,6 +17,7 @@
         family: $sans;
         size: 1.2rem;
     }
+    z-index: 1;
 
     span {
         cursor: pointer;
@@ -37,7 +38,7 @@
                   
         &:hover {
             color: $black;
-            background-color: $white-opaque;
+            background-color: $clear;
         }
 
     }
@@ -55,16 +56,19 @@
     .messageWrapper {
         // width: calc(300px - 30px);
         width: 300px;
-        background-color: $white-opaque-2;
+        // background-color: $white-opaque-2;
+        background-color: $clear;
         height: calc(365px - 30px);
         height: 365px;
-        overflow: scroll;
+        overflow-y: scroll;
+        padding-bottom: 10px;
 
         .message {
             width: 170px;
             background-color: $black-opaque;
             color: $white;
             padding: 10px;
+            // margin-bottom: 10px;
             em {
                 color: $snowy-sky;                
                 font: {
@@ -79,6 +83,11 @@
                 margin: 5px 0;
                 font-size: 1rem;
             }
+            word-break: keep-all;
+            word-wrap: break-word;
+            text-align: left;
+            
+            
         }
 
         .admin {
@@ -88,10 +97,14 @@
         }
 
         .user {
+            em {
+                color: $white;
+            }
+            color: $black;
             margin-right: 10px;
             margin-top: 10px;
             float: right;
-            background-color: $black;
+            background-color: $snowy-sky-2;
         }
     }
 
@@ -111,7 +124,7 @@
             height: 80px;
             outline: none;
             color: $black;
-            background-color: $white-opaque;
+            background-color: $clear;
             font: {
                 family: $sans;
                 size: 0.8rem;
@@ -137,7 +150,7 @@
             outline: none;
             &:hover {
                 color: $black;
-                background-color: $white-opaque;
+                background-color: $clear;
             }
             
         }

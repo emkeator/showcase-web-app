@@ -7,10 +7,15 @@ $serif: 'Playfair Display', serif;
 //COLORS
 $black: #000;
 $white: #fff;
-$black-opaque: rgba(0, 0, 0, 0.5);
-$white-opaque: rgba(255, 255,255, 0.35);
-$white-opaque-2: rgba(255, 255,255, 0.65);
-$black-opaque-2: rgba(0, 0, 0, 0.75);
+// $black-opaque: rgba(0, 0, 0, 0.5);
+// $white-opaque: rgba(255, 255,255, 0.35);
+// $white-opaque-2: rgba(255, 255,255, 0.65);
+// $black-opaque-2: rgba(0, 0, 0, 0.75);
+$black-opaque: rgba(0, 0, 0, 1);
+$white-opaque: rgba(255, 255,255, 1);
+$white-opaque-2: rgba(255, 255,255, 1);
+$white-opaque-3: rgba(255, 255,255, 0.45);
+$black-opaque-2: rgba(0, 0, 0, 1);
 $clear: rgba(0, 0, 0, 0);
 
 
@@ -30,7 +35,7 @@ $light-grey: #bcbcbc;
 
 
 // $black-opaque-2: rgba(0, 0, 0, 0.8);
-$black-opaque-3: rgba(0, 0, 0, 0.01);
+$black-opaque-3: rgba(0, 0, 0, 0.65);
 $black-opaque-4: rgba(0, 0, 0, 0.9);
 $white-opaque-2: rgba(229, 229, 229, 0.75);
 
@@ -47,5 +52,6 @@ $night-opaque: rgba(11, 16, 22, 0.5);
 $stormy-input-bg: #30384D;
 $stormy-opaque-input-bg: #757981;
 
-$snowy-sky: #949494
+$snowy-sky: #949494;
+$snowy-sky-2: #ccc
 

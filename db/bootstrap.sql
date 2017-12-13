@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS trips
     hotel TEXT,
     departure_port_code TEXT,
     destination_port_code TEXT,
+    destination_hotel_code TEXT,    
     completed BOOLEAN,
     departure_date TEXT,
     return_date TEXT,
