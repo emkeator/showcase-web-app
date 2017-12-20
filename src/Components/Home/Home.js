@@ -28,9 +28,11 @@ export default class Home extends Component{
         //check if user on session - if yes, change state.userOnSession to true
         axios.get('/auth/me')
         .then(res => {
-            console.log(res.data)
             if(res.data === 'User not found'){
-                window.location = '/'
+                console.log(window.location)
+                // window.location.hash = '/login'
+                window.location.href = 'http://localhost:3004/#/login'
+
             } else {
                 this.setState({
                     user: res.data
@@ -39,7 +41,7 @@ export default class Home extends Component{
         })
         .catch(err => {
             console.log(err)
-            window.location = '/'
+            window.location = '/login'
         })
     }
 
@@ -71,7 +73,6 @@ export default class Home extends Component{
                     showTrips: false,
                     showPacking: true
                 })
-                console.log(this.state.showChat)
                 if(this.state.showChat){
                     this.changeView('chat')
                 }
@@ -83,6 +84,10 @@ export default class Home extends Component{
                     showTrips: false,
                     showPacking: true
                 })
+                if(this.state.showChat){
+                    this.changeView('chat')
+                }
+                break
             case 'chat':
                 if (!this.state.showChat) {
                     TweenMax.to($('#Chat'), 1.5, {height: '480px', ease: TweenMax.Power4.easeInOut})
@@ -104,7 +109,7 @@ export default class Home extends Component{
         return(
             <div id="Home">
                 
-                <Header firstname={"Emily"}/>
+                <Header firstname={this.state.user ? this.state.user.firstname : null}/>
                 <div className="homeWrapper">
                     <div className="mobileMakingWrapper">
                         <section className="choices">

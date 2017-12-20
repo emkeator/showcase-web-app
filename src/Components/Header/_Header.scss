@@ -10,8 +10,9 @@
         // @include mobile-making-wrapper();
         width: 300px;
         // height: 250px;
-        padding: 20px 0;
+        // padding: 20px 0;
         margin-top: 0;
+        text-align: center;
 
         h1 {
             width: 300px;
@@ -27,6 +28,22 @@
                 align: center;
                 transform: uppercase;
             }
+        }
+
+        a {
+            color: $white;
+            text: {
+                align: center;
+                transform: uppercase;
+                decoration: none;
+            }
+            font: {
+                size: 0.7rem;
+                family: $sans;
+                
+            }
+            line-height: 1.2em;
+            letter-spacing: 0.2em;            
         }
     }
 

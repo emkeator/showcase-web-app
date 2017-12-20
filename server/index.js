@@ -10,12 +10,12 @@ const lodash = require('lodash'),
       passport = require('passport'),
       Auth0Strategy = require('passport-auth0'),
       http = require('http'),
-      sockets = require('socket.io'),
+      socket = require('socket.io'),
       IC = require('iatacodes'),
       ic = new IC(`${process.env.IATA_KEY}`)
       app = express(),
-      server = http.createServer(app),   
-      io = sockets(server),
+      S3 = require('./S3'),
+      months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       db_connection =  {
             host: process.env.HEROKU_HOST,
             port: process.env.HEROKU_PORT,
@@ -33,8 +33,11 @@ const lodash = require('lodash'),
       port = process.env.PORT
 
 
-app.use(bodyParser.json());
-app.use(cors());
+//========= Top-Level Middleware =========//
+// app.use(bodyParser.json())
+app.use(bodyParser.json({limit:'50mb'}))
+app.use(bodyParser.urlencoded({extended:true, limit:'50mb'}))
+app.use(cors())
 
 app.use(session({
       secret: process.env.SECRET,
@@ -46,8 +49,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 // app.use(express.static(__dirname + '/../build'))
 
+//========= DB Massive Connection =========//
 massive(db_connection).then(db => app.set('db', db))
 
+//========= Auth0 Passport =========//
 passport.use(new Auth0Strategy({
             domain: process.env.AUTH_DOMAIN,
             clientID: process.env.AUTH_CLIENT_ID,
@@ -71,27 +76,32 @@ passport.use(new Auth0Strategy({
 }))
 
 passport.serializeUser(function(user, done) {
-      done(null, user);
-});
+      done(null, user)
+})
 
 passport.deserializeUser(function(obj, done) {
       app.get('db').find_session_user([obj.id])
       .then( user => {
-            done(null, user[0]);
+            if(user.length) {
+                  done(null, user[0]);
+            } else {
+                  done(null, null);
+            }
       })
-      done(null, obj)
-});
+})
+
+
+//========= Amazon S3 =========//
+S3(app)
 
 //========= Endpoints =========//
 
 //POST departure city code
 app.post('/api/departurePortCodes', (req, res) => {
-      let { departure_port } = req.body;  
+      let { departure_port } = req.body; 
+
       axios.get(`https://api.sandbox.amadeus.com/v1.2/airports/autocomplete?apikey=${process.env.AMADEUS_KEY}&term=${departure_port}`)
       .then(apiRes => {
-            if(apiRes.data.length === 0){
-                  res.status(200).json(`Departure city is not valid! Try again.`);
-            }
             res.status(200).send(apiRes.data)
       })
       .catch(err => res.status(404).send(err))
@@ -100,24 +110,19 @@ app.post('/api/departurePortCodes', (req, res) => {
 //POST destination city code
 app.post('/api/destinationPortCodes', (req, res) => {
       let { destination_port } = req.body;
-      // console.log(req.body, destination_port)    
       
       axios.get(`https://api.sandbox.amadeus.com/v1.2/airports/autocomplete?apikey=${process.env.AMADEUS_KEY}&term=${destination_port}`)
       .then(apiRes => {
-            if(apiRes.data.length === 0){
-                  res.status(200).json(`Destination city is not valid! Try again.`);
-            }
             res.status(200).send(apiRes.data)
       })
       .catch(err => res.status(404).send(err))
 })
 
+//GET trips - gets all of a user's trips
 
+//POST create trip - handles new trips, recreating trips
 
-
-//POST create trip
-
-//PUT update trip
+//PUT update trip - handles completion, edits
 
 //DELETE delete trip
 
@@ -143,6 +148,16 @@ app.get('/auth/me', (req, res, next) => {
   }
 })
 
+//Auth Login Page
+app.get('/auth/me/login', (req, res, next) => {
+  console.log(req.user)
+  if (req.user) {
+    return res.status(200).send('User found')
+  } else {
+    return res.status(200).send('No one logged in.')
+  }
+})
+
 //Logout
 app.get('/auth/logout', (req, res) => {
   req.logOut()
@@ -152,13 +167,38 @@ app.get('/auth/logout', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`I'm listening on port ` + port))
+// app.listen(port, () => console.log(`I'm listening on port ` + port))
+const io = socket(app.listen(port, () => console.log(`I'm listening on port ` + port)))
 
 //========= Socket.io =========//
 
+io.on('connection', socket => {
+      console.log('User connected')
 
-//join new room with admin
+      socket.on('join room', data => {
+            console.log('Room joined', data.room)
+            socket.join(data.room)
+            io.to(data.room).emit('room joined')
+      })
 
-//send message
+      socket.on('message sent', data => {
+            io.to(data.room).emit('message dispatched', data.message)
+            let stamp = new Date()
+            let minutes = stamp.getMinutes()
+            minutes = minutes < 10 ? `0${minutes}` : `${minutes}`
+            let messageBack = {
+                  from: 'admin',
+                  timeStamp: `${months[stamp.getMonth()]} ${stamp.getDate()} - ${stamp.getHours() - 12}:${minutes}`,
+                  content: 'Sorry, this app was only made as a showcase. You are connected to a socket.io room. If this were a real app, a travel agent admin would be logged into this socket room with you to answer questions. Try uploading a photo!'
+            }
+            setTimeout(() => {
+                  io.to(data.room).emit('message dispatched', messageBack)
+            }, 700)
+            
+            
+      })
+
+      socket.on('disconnect', () => console.log('User disconnected.'))
+})
 
 

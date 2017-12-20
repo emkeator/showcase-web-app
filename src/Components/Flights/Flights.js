@@ -47,7 +47,7 @@ export default class Flights extends Component{
         let {destination_port, departure_port} = this.state;
         axios.post(`/api/departurePortCodes`, {departure_port}).then(res => {
             console.log(res.data);
-            if (res.data === `Departure city is not valid! Try again.`) {
+            if (res.data.length === 0) {
                 alert(`Departure city ${departure_port} is not valid! Try again.`)
             } else {
                 this.setState({
@@ -56,12 +56,13 @@ export default class Flights extends Component{
             }
             
         }).catch(err => {
-            alert(`Something's up! ${err.response.statusText} ${err.response.status}.`)
+            alert(`Something's up! ${err.response.statusText} ${err.response.status}. The API key may have expired - message me to fix it. In the meantime, you can still make trips, but not link to Skyscanner to find hotels or flights.`)
         })
+        
         axios.post(`/api/destinationPortCodes`, {destination_port}).then(res => {
             console.log(res.data);
             let hotelVal;
-            if (res.data === `Destination city is not valid! Try again.`) {
+            if (res.data.length === 0) {
                 alert(`Destination city ${destination_port} is not valid! Try again.`)
             } else {
                 if (res.data.length > 1) {
@@ -76,7 +77,7 @@ export default class Flights extends Component{
             }
             
         }).catch(err => {
-            alert(`Something's up! ${err.response.statusText} ${err.response.status}.`)
+            alert(`Something's up! ${err.response.statusText} ${err.response.status}. The API key may have expired - message me to fix it. In the meantime, you can still make trips, but not link to Skyscanner to find hotels or flights.`)
         })
     }
 

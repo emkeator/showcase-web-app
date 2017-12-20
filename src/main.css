@@ -143,8 +143,8 @@ table {
   justify-content: center; }
   #Header .mobileMakingWrapper {
     width: 300px;
-    padding: 20px 0;
-    margin-top: 0; }
+    margin-top: 0;
+    text-align: center; }
     #Header .mobileMakingWrapper h1 {
       width: 300px;
       color: #949494;
@@ -154,6 +154,15 @@ table {
       line-height: 1.2em;
       text-align: center;
       text-transform: uppercase; }
+    #Header .mobileMakingWrapper a {
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.2em;
+      letter-spacing: 0.2em; }
 
 #Trips {
   width: 300px;
@@ -212,8 +221,7 @@ table {
     position: relative;
     margin-top: 10px;
     height: 180px;
-    overflow: hidden;
-    background-color: black; }
+    overflow: hidden; }
   #Flights #aWrapper {
     width: 300px;
     height: 130px;
@@ -245,7 +253,7 @@ table {
         text-transform: uppercase;
         position: absolute; }
         #Flights #aWrapper div a:hover {
-          color: #000; }
+          color: #949494; }
       #Flights #aWrapper div .flightsA {
         top: calc(((130px - 80px) / 2) - 25px);
         left: -90px; }
@@ -381,14 +389,11 @@ table {
     padding: 7px 0;
     background-color: black;
     border-bottom: 2px solid #000; }
-    #Chat span:hover {
-      color: #000;
-      background-color: transparent; }
   #Chat .chatContainer {
     height: 447px; }
   #Chat .messageWrapper {
     width: 300px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     height: calc(365px - 30px);
     height: 365px;
     overflow-y: scroll;
@@ -406,10 +411,15 @@ table {
         font-size: 0.6rem;
         margin: 0;
         padding: 0; }
-      #Chat .messageWrapper .message p {
+      #Chat .messageWrapper .message .content {
         width: 150px;
         margin: 5px 0;
         font-size: 1rem; }
+        #Chat .messageWrapper .message .content img {
+          width: 150px;
+          height: auto; }
+        #Chat .messageWrapper .message .content p {
+          margin-bottom: 5px; }
     #Chat .messageWrapper .admin {
       margin-left: 10px;
       margin-top: 10px;
@@ -433,13 +443,43 @@ table {
       height: calc(80px - 14px);
       height: 80px;
       outline: none;
-      color: #000;
-      background-color: transparent;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
       font-family: "Open Sans", sans-serif;
       font-size: 0.8rem;
       padding: 7px;
       margin: 0;
       resize: none; }
+      #Chat .inputBar textarea::-webkit-input-placeholder {
+        color: #ccc; }
+    #Chat .inputBar .fileUploadWrapper {
+      position: relative; }
+      #Chat .inputBar .fileUploadWrapper input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 80px;
+        width: 70px;
+        opacity: 1;
+        padding-top: 80px;
+        outline: none;
+        cursor: pointer; }
+    #Chat .inputBar .fakeButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      border: none;
+      height: 80px;
+      background-color: black;
+      color: #fff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      padding: 7px;
+      margin: 0;
+      outline: none;
+      cursor: pointer; }
     #Chat .inputBar button {
       width: 70px;
       border: none;
@@ -451,10 +491,8 @@ table {
       text-transform: uppercase;
       padding: 7px;
       margin: 0;
-      outline: none; }
-      #Chat .inputBar button:hover {
-        color: #000;
-        background-color: transparent; }
+      outline: none;
+      cursor: pointer; }
 
 #PageNotFound {
   width: 100vw;

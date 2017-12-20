@@ -36,10 +36,10 @@
         background-color: $black-opaque;  
         border-bottom: 2px solid $black;
                   
-        &:hover {
-            color: $black;
-            background-color: $clear;
-        }
+        // &:hover {
+        //     color: $black;
+        //     background-color: $clear;
+        // }
 
     }
     .chatContainer {
@@ -56,8 +56,8 @@
     .messageWrapper {
         // width: calc(300px - 30px);
         width: 300px;
-        // background-color: $white-opaque-2;
-        background-color: $clear;
+        background-color: $black-opaque-4;
+        // background-color: $clear;
         height: calc(365px - 30px);
         height: 365px;
         overflow-y: scroll;
@@ -78,10 +78,19 @@
                 margin: 0;
                 padding: 0;
             }
-            p {
+            .content {
                 width: 150px;
                 margin: 5px 0;
                 font-size: 1rem;
+
+                img {
+                    width: 150px;
+                    height: auto;
+                }
+
+                p {
+                    margin-bottom: 5px;
+                }
             }
             word-break: keep-all;
             word-wrap: break-word;
@@ -123,8 +132,11 @@
             height: calc(80px - 14px);
             height: 80px;
             outline: none;
-            color: $black;
-            background-color: $clear;
+            color: $white;
+            &::-webkit-input-placeholder {
+                color: $snowy-sky-2;
+            }
+            background-color: $black-opaque-4;
             font: {
                 family: $sans;
                 size: 0.8rem;
@@ -133,6 +145,45 @@
             margin: 0;
             resize: none;
             
+        }
+
+        .fileUploadWrapper {
+            position: relative;
+            input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 80px;
+                width: 70px;
+                opacity: 1;
+                padding-top: 80px;
+                outline: none;
+                cursor: pointer;
+            }
+        }
+
+        .fakeButton {
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            width:70px;
+            border: none;
+            height: 80px;
+            background-color: $black-opaque;
+            color: $white;
+            font: {
+                family: $sans;
+                size: 1.2rem;
+            }
+            text-transform: uppercase;
+            padding: 7px;
+            margin: 0;
+            outline: none;
+            // &:hover {
+            //     color: $black;
+            //     background-color: $clear;
+            // }
+            cursor: pointer;
         }
         button {
             width:70px;
@@ -148,10 +199,11 @@
             padding: 7px;
             margin: 0;
             outline: none;
-            &:hover {
-                color: $black;
-                background-color: $clear;
-            }
+            // &:hover {
+            //     color: $black;
+            //     background-color: $clear;
+            // }
+            cursor: pointer;
             
         }
     }

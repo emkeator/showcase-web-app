@@ -240,9 +240,8 @@ class App extends Component {
   render() {
     return (
       <div id="App">
-        <header>
+        <header className="appHeader">
             <h1>On The Fly</h1>
-            <a href="http://localhost:3003/auth/logout">Logout</a> 
         </header>
         <Switch>
             <Route exact path="/" render={() => {
