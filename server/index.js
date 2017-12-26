@@ -119,10 +119,58 @@ app.post('/api/destinationPortCodes', (req, res) => {
 })
 
 //GET trips - gets all of a user's trips
+app.get('/api/getTrips/:id', (req, res) => {
+    app.get('db').get_trips(req.params.id).then( data => {
+          res.status(200).send(data)
+    })
+})
+
+//GET trip completion update
+app.get('/api/updateTripCompletion/:id/:completion', (req, res) => {
+    let { id, completion } = req.params
+    console.log(id, completion)
+    app.get('db').update_trip_completion(completion, id).then(back => console.log(back))
+    res.status(200).send('yes')
+})
 
 //POST create trip - handles new trips, recreating trips
+app.post('/api/createTrip', (req, res) => {
+    let { trip } = req.body
+    app.get('db').create_trip(
+      [trip.user_id,
+      trip.departure_port,
+      trip.destination_port,
+      trip.hotel,
+      trip.departure_port_code,
+      trip.destination_port_code,
+      trip.destination_hotel_code,    
+      trip.completed,
+      trip.departure_date,
+      trip.return_date,
+      trip.budget]
+    ).then(newTrip => {
+          res.status(200).send(newTrip)
+    })
+})
 
 //PUT update trip - handles completion, edits
+app.put('/api/updateTrip', (req, res) => {
+      let { trip } = req.body
+    app.get('db').update_trip_info([
+
+    ])
+
+//     departure_port = $1,
+//     destination_port = $2,
+//     hotel = $3,
+//     departure_port_code = $4,
+//     destination_port_code = $5,
+//     destination_hotel_code = $6,    
+//     departure_date = $7,
+//     return_date = $8
+//     budget = $9
+// WHERE user_id = $10
+})
 
 //DELETE delete trip
 

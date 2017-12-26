@@ -18,10 +18,15 @@ export default class Home extends Component{
             showPacking: false,
             showChat: false,
             selectedTrip: null,
-            user: null
+            user: null,
+            trips: []
         }
 
         this.changeView = this.changeView.bind(this)
+        this.toggleTripStatus = this.toggleTripStatus.bind(this)
+        this.createTrip = this.createTrip.bind(this)
+        this.updateTrip = this.updateTrip.bind(this)
+        this.deleteTrip = this.deleteTrip.bind(this)
     }
 
     componentDidMount(){
@@ -37,11 +42,71 @@ export default class Home extends Component{
                 this.setState({
                     user: res.data
                 })
+                axios.get(`/api/getTrips/${res.data.id}`).then( trips => {
+                    this.setState({
+                        trips: trips.data
+                    })
+                })
             }
         })
         .catch(err => {
             console.log(err)
             window.location = '/login'
+        })
+    }
+
+    toggleTripStatus(index, goAgain){
+        if (goAgain) {
+            let x = this.state.trips.slice(0)
+            let trip = Object.assign({}, x[index], {completed: false, departure_date: '', return_date: ''})
+            axios.post(`/api/createTrip`, {trip}).then(res => {
+                console.log(res.data[0])
+                x.unshift(res.data[0])
+                this.setState({
+                    trips: x
+                })
+            })
+        } else {
+            let x = this.state.trips.slice(0)
+            x[index].completed = !x[index].completed
+            let tripToUpdate = x[index]
+            this.setState({
+                trips: x
+            })
+            //this will call update trip completion
+            axios.get(`/api/updateTripCompletion/${tripToUpdate.id}/${tripToUpdate.completed}`).then(res => {
+                if(res.status !== 200) alert('Sorry, the database is down! Try again later.')
+            })
+        }
+        
+    }
+
+    createTrip(tripObject){
+        let x = this.state.trips.slice(0)
+        tripObject.user_id = this.state.user.id
+        //call create trip and then assign what comes back
+        axios.post(`/api/createTrip`, {trip: tripObject}).then(res => {
+            console.log(res.data[0])
+            x.unshift(res.data[0])
+            this.setState({
+                trips: x
+            })
+        })
+    }
+
+    updateTrip(tripObject, index){
+        let x = this.state.trips.slice(0)
+        x[index] = tripObject
+        this.setState({
+            trips: x
+        })
+    }
+
+    deleteTrip(index){
+        let x = this.state.trips.slice(0)
+        x.splice(index, 1)
+        this.setState({
+            trips: x
         })
     }
 
@@ -120,15 +185,15 @@ export default class Home extends Component{
                         <section className="modules">
                             {
                                 this.state.showFlights && !this.state.showChat ?
-                                    <Flights createTrip={this.props.createTrip} changeView={this.changeView}/> : null
+                                    <Flights createTrip={this.createTrip} changeView={this.changeView}/> : null
                             }
                             {
                                 this.state.showTrips && !this.state.showChat ?
-                                    <Trips trips={this.props.trips} toggleTripStatus={this.props.toggleTripStatus} changeView={this.changeView}/> : null
+                                    <Trips trips={this.state.trips} toggleTripStatus={this.toggleTripStatus} changeView={this.changeView}/> : null
                             }
                             {
                                 this.state.showPacking && !this.state.showChat?
-                                    <Detail trips={this.props.trips} toggleTripStatus={this.props.toggleTripStatus} updateTrip={this.props.updateTrip} changeView={this.changeView} deleteTrip={this.props.deleteTrip} tripIndex={this.state.selectedTrip}/> : null
+                                    <Detail trips={this.state.trips} toggleTripStatus={this.toggleTripStatus} updateTrip={this.updateTrip} changeView={this.changeView} deleteTrip={this.deleteTrip} tripIndex={this.state.selectedTrip}/> : null
                             }
                         </section>
                         
