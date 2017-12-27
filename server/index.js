@@ -52,6 +52,7 @@ app.use(passport.session())
 //========= DB Massive Connection =========//
 massive(db_connection).then(db => app.set('db', db))
 
+
 //========= Auth0 Passport =========//
 passport.use(new Auth0Strategy({
             domain: process.env.AUTH_DOMAIN,
@@ -128,9 +129,7 @@ app.get('/api/getTrips/:id', (req, res) => {
 //GET trip completion update
 app.get('/api/updateTripCompletion/:id/:completion', (req, res) => {
     let { id, completion } = req.params
-    console.log(id, completion)
-    app.get('db').update_trip_completion(completion, id).then(back => console.log(back))
-    res.status(200).send('yes')
+    app.get('db').update_trip_completion(completion, id).then(back => res.status(200).send())
 })
 
 //POST create trip - handles new trips, recreating trips
@@ -156,23 +155,25 @@ app.post('/api/createTrip', (req, res) => {
 //PUT update trip - handles completion, edits
 app.put('/api/updateTrip', (req, res) => {
       let { trip } = req.body
-    app.get('db').update_trip_info([
-
-    ])
-
-//     departure_port = $1,
-//     destination_port = $2,
-//     hotel = $3,
-//     departure_port_code = $4,
-//     destination_port_code = $5,
-//     destination_hotel_code = $6,    
-//     departure_date = $7,
-//     return_date = $8
-//     budget = $9
-// WHERE user_id = $10
+      console.log(trip)
+      app.get('db').update_trip_info([
+            trip.departure_port, 
+            trip.destination_port, 
+            trip.hotel,
+            trip.departure_port_code, 
+            trip.destination_port_code, 
+            trip.destination_hotel_code,     
+            trip.departure_date, 
+            trip.return_date,             
+            trip.budget,
+            trip.id       
+      ]).then(back => res.status(200).send())
 })
 
 //DELETE delete trip
+app.delete('/api/deleteTrip/:id', (req, res) => {
+    app.get('db').delete_trip(req.params.id).then( back => res.status(200).send())
+})
 
 
 

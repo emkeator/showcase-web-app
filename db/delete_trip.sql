@@ -1,2 +1,2 @@
 DELETE from trips
-WHERE user_id = $1
+WHERE id = $1

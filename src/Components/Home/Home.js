@@ -58,7 +58,7 @@ export default class Home extends Component{
     toggleTripStatus(index, goAgain){
         if (goAgain) {
             let x = this.state.trips.slice(0)
-            let trip = Object.assign({}, x[index], {completed: false, departure_date: '', return_date: ''})
+            let trip = Object.assign({}, x[index], {completed: 0, departure_date: '', return_date: ''})
             axios.post(`/api/createTrip`, {trip}).then(res => {
                 console.log(res.data[0])
                 x.unshift(res.data[0])
@@ -68,7 +68,7 @@ export default class Home extends Component{
             })
         } else {
             let x = this.state.trips.slice(0)
-            x[index].completed = !x[index].completed
+            x[index].completed = x[index].completed === 0 ? 1 : 0
             let tripToUpdate = x[index]
             this.setState({
                 trips: x
@@ -86,7 +86,6 @@ export default class Home extends Component{
         tripObject.user_id = this.state.user.id
         //call create trip and then assign what comes back
         axios.post(`/api/createTrip`, {trip: tripObject}).then(res => {
-            console.log(res.data[0])
             x.unshift(res.data[0])
             this.setState({
                 trips: x
@@ -100,14 +99,23 @@ export default class Home extends Component{
         this.setState({
             trips: x
         })
+        //call update!
+        axios.put(`/api/updateTrip`, { trip: tripObject }).then(res => {
+            if(res.status !== 200) alert('Sorry, the database is down! Try again later.')
+        })
     }
 
     deleteTrip(index){
         let x = this.state.trips.slice(0)
-        x.splice(index, 1)
+        let tripToDelete = x.splice(index, 1)
         this.setState({
             trips: x
         })
+        console.log(tripToDelete)
+        axios.delete(`/api/deleteTrip/${tripToDelete[0].id}`).then(res => {
+            if(res.status !== 200) alert('Sorry, the database is down! Try again later.')
+        })
+
     }
 
     changeView(tracker, value = null){

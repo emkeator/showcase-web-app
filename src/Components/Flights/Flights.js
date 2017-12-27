@@ -89,7 +89,7 @@ export default class Flights extends Component{
 
     makeTrip(){
         let {departure_port, destination_port, departure_port_code, destination_port_code, destination_hotel_code} = this.state
-        let completed = false,
+        let completed = 0,
             departure_date = '',
             return_date = '',
             hotel = '',
