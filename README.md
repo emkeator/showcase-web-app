@@ -1,22 +1,14 @@
-Things to showcase:
-  -Underscore?
-  -Lodash?
-  -D3?
 
 Travel Planning Site:
   -Auth 0
 
-  -To-Do List:
-    -Local Storage
-    -Packed/Not Packed
-    -S3 Picture uploads to add to list
-
-  -Chat with an Agent Page:
-    -Sockets
+  -Chat with an "Agent":
+    -Socket.io
+    -S3 Picture uploads
   
   -Restful API:
-    -flights
-    -underscore/lodash to sort them?
+    -airport codes
+    -Getting info from server
   
 
 
