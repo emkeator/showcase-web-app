@@ -7,7 +7,7 @@ Travel Planning Site:
     -S3 Picture uploads
   
   -Restful API:
-    -airport codes
+    -airport codes --> used to generate links to Skyscanner
     -Getting info from server
   
 
