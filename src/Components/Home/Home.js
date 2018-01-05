@@ -51,7 +51,7 @@ export default class Home extends Component{
         })
         .catch(err => {
             console.log(err)
-            window.location = '/login'
+            window.location.href = 'https://travel-showcase-app.herokuapp.com/#/login'
         })
     }
 
