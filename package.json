@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "main": "./server/index.js",
   "private": true,
-  // "proxy": "http://localhost:3003",
   "dependencies": {
     "aws-sdk": "^2.171.0",
     "axios": "^0.17.0",
