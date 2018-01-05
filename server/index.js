@@ -184,8 +184,8 @@ app.get('/auth', passport.authenticate('auth0'));
 
 //Callback
 app.get('/auth/callback', passport.authenticate('auth0', {
-  successRedirect: 'http://localhost:3004/#/',
-  failureRedirect: 'http://localhost:3004/#/login'
+  successRedirect: 'https://travel-showcase-app.herokuapp.com/#/',
+  failureRedirect: 'https://travel-showcase-app.herokuapp.com/#/login'
 }))
 
 //Auth Me
@@ -210,7 +210,7 @@ app.get('/auth/me/login', (req, res, next) => {
 //Logout
 app.get('/auth/logout', (req, res) => {
   req.logOut()
-  return res.redirect(302, 'http://localhost:3004/#/login')
+  return res.redirect(302, 'https://travel-showcase-app.herokuapp.com/#/login')
 })
 
 
