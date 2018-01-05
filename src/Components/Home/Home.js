@@ -36,7 +36,7 @@ export default class Home extends Component{
             if(res.data === 'User not found'){
                 console.log(window.location)
                 // window.location.hash = '/login'
-                window.location.href = 'http://localhost:3004/#/login'
+                window.location.href = 'https://travel-showcase-app.herokuapp.com/#/login'
 
             } else {
                 this.setState({

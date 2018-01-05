@@ -15,7 +15,7 @@ export default function Header(props){
                     <h1>Welcome</h1>
                 }
                 {/* <TypeAnimate/>  */}
-                <a href="http://localhost:3003/auth/logout">Logout</a> 
+                <a href="/auth/logout">Logout</a> 
             </div>
         </div>
     )

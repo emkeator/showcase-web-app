@@ -7,7 +7,7 @@ export default class Login extends Component{
         //check if user on session - if yes, change state.userOnSession to true
         axios.get('/auth/me/login').then(res => {
             if(res.data === 'User found') {
-                window.location.href = 'http://localhost:3004/#/'
+                window.location.href = 'https://travel-showcase-app.herokuapp.com/#/'
             }
         })
     }
@@ -17,7 +17,7 @@ export default class Login extends Component{
             <div id="Login">
                 <div className="mobileMakingWrapper">
                     <TypeAnimate/>
-                    <a href="http://localhost:3003/auth">
+                    <a href="/auth">
                         <p>LOGIN</p>
                         <p className="secondary">Or Sign Up</p>
                     </a>
