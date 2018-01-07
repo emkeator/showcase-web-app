@@ -48,6 +48,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 // app.use(express.static(__dirname + '/../build'))
+app.use(express.static(__dirname + '/../build')) //npm build to deploy app
 
 //========= DB Massive Connection =========//
 massive(db_connection).then(db => app.set('db', db))
