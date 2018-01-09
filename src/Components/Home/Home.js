@@ -7,7 +7,6 @@ import Chat from '../Chat/Chat'
 import TweenMax from 'gsap'
 import $ from 'jquery'
 import axios from 'axios'
-import plane from '../../images/plane.png'
 
 export default class Home extends Component{
     constructor() {
